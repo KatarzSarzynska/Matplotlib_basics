@@ -1,0 +1,42 @@
+import pandas
+from matplotlib import pyplot as plt
+import pandas as pd
+###########################################################
+# x = [1,2,3]
+# y = [1,4,9]
+# z = [2,5,8]
+# plt.plot(x,y)
+# plt.plot(x,z)
+# plt.title("My graph")
+# plt.xlabel("X values")
+# plt.ylabel("Y and Z values")
+# plt.legend(["This is Y","This is Z"])
+# plt.show()
+###########################################################
+# sample_data = pandas.read_csv("C:\\Users\\sentione\\Desktop\\sample_data.csv")
+# # print(sample_data.head())
+# # print(sample_data["column_c"])
+# x = sample_data["column_c"]
+# y = sample_data["column_b"]
+# z = sample_data["column_a"]
+# plt.plot(x,y, ls = "dotted",c = "hotpink")
+# plt.plot(x,z, lw = '8')
+# font1 = {'family':'Comic Sans MS','color':'blue','size':20}
+# plt.title("My new graph",fontdict = font1)
+# plt.xlabel("Column C values")
+# plt.ylabel("Column B and A values")
+# plt.legend(["This is Column B","This is Column A"])
+# plt.show()
+###########################################################
+my_data = pandas.read_csv("C:\\Users\\sentione\\Desktop\\countries.csv")
+# Population growth for US and Poland
+US = my_data[my_data["country"] == "United States"]
+PL = my_data[my_data["country"] == "Poland"]
+# print(US.head())
+plt.plot(US["year"],US["population"], c = "blue")
+plt.plot(PL["year"],PL["population"], c = "red")
+plt.title("Population growth")
+plt.xlabel("Country")
+plt.ylabel("Year")
+plt.legend(["USA","Poland"])
+plt.show()
